@@ -90,15 +90,15 @@ router.route( '/resources')
 			}
 		})
 	})
-	.get("/:id", function(req, res) {
-		db.collection(RESOURCES_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
-			if (err) {
-				handleError(res, err.message, "Failed to get resource");
-			} else {
-			    res.status(200).json(doc);
-			}
-		});
-	})
+	// .get("/:id", function(req, res) {
+	// 	db.collection(RESOURCES_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+	// 		if (err) {
+	// 			handleError(res, err.message, "Failed to get resource");
+	// 		} else {
+	// 		    res.status(200).json(doc);
+	// 		}
+	// 	});
+	// })
 
 	.put("/:id", function(req, res) {
 	  var updateDoc = req.body;
