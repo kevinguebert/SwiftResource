@@ -31,8 +31,6 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
-
 var router = express.Router();
 
 function handleError(res, reason, message, code) {
@@ -92,6 +90,4 @@ router.get('/', function(req, res) {
 });
 
 app.use('/api', router);
-
-app.listen(port);
 console.log('Magic is happening on port ' + port);
