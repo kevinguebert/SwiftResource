@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftResources/SetupToolsViewController.swift"
+            timestampString = "483396549.138273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftResources/ResourceCollectionViewController.swift"
+            timestampString = "483548303.327764"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ResourceCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.resources.getter : Swift.Array&lt;SwiftResources.Resource&gt;"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483548715.182192"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.resources.setter : Swift.Array&lt;SwiftResources.Resource&gt;"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483548715.182346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (collectionViewLayout : __ObjC.UICollectionViewLayout) -&gt; SwiftResources.ResourceCollectionViewController"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483548715.182427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "6073">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SwiftResources.ResourceCollectionViewController"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483548715.182497"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "6297">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SwiftResources.ResourceCollectionViewController&gt;"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483548715.182567"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "6073">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftResources/Model/Resource.swift"
+            timestampString = "483548176.833787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "Resource"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.Resource.__deallocating_deinit"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/Model/Resource.swift"
+                  timestampString = "483548176.839503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.Resource.init () -&gt; SwiftResources.Resource"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/Model/Resource.swift"
+                  timestampString = "483548176.839653"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftResources/ResourceCollectionViewController.swift"
+            timestampString = "483555034.418847"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftResources/ResourceCollectionViewController.swift"
+            timestampString = "483550564.325787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ResourceCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.resourcesArray.getter : Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.340158"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.resourcesArray.setter : Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.340322"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (collectionViewLayout : __ObjC.UICollectionViewLayout) -&gt; SwiftResources.ResourceCollectionViewController"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.340405"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SwiftResources.ResourceCollectionViewController"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.340478"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SwiftResources.ResourceCollectionViewController&gt;"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.340549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftResources/ResourceCollectionViewController.swift"
+            timestampString = "483550564.828219"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ResourceCollectionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.__deallocating_deinit"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.830028"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (collectionViewLayout : __ObjC.UICollectionViewLayout) -&gt; SwiftResources.ResourceCollectionViewController"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.830198"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SwiftResources.ResourceCollectionViewController"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.830312"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftResources.ResourceCollectionViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SwiftResources.ResourceCollectionViewController&gt;"
+                  moduleName = "SwiftResources"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kguebe/Documents/Development/iOS/SwiftResources/SwiftResources/ResourceCollectionViewController.swift"
+                  timestampString = "483550564.830415"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftResources/ResourcesTableViewController.swift"
+            timestampString = "483560791.990115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
