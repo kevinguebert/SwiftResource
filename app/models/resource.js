@@ -1,5 +1,5 @@
-var mongoose   = require('mongoose');
-var Schema     = mongoose.Schema;
+var mongodb   = require('mongodb');
+var Schema     = mongodb.Schema;
 
 var ResourceSchema = new Schema({
 	name: String,
@@ -8,4 +8,4 @@ var ResourceSchema = new Schema({
 	is_swift: Boolean
 });
 
-module.exports = mongoose.model('Resource', ResourceSchema);
+module.exports = mongodb.model('Resource', ResourceSchema);
