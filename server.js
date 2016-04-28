@@ -98,7 +98,7 @@ router.route( '/resources')
 	      res.status(200).json(doc);
 	    }
 	  });
-	});
+	})
 
 	.put("/resources/:id", function(req, res) {
 	  var updateDoc = req.body;
@@ -111,7 +111,7 @@ router.route( '/resources')
 	      res.status(204).end();
 	    }
 	  });
-	});
+	})
 
 	.delete("/resources/:id", function(req, res) {
 	  db.collection(RESOURCES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
