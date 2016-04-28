@@ -3,8 +3,8 @@
 var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
-var mongoose   = require('mongodb');
-var ObjectID = mongo.ObjectID;
+var mongodb = require('mongodb');
+var ObjectID = mongodb.ObjectID;
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
 
