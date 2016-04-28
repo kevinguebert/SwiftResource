@@ -46,7 +46,7 @@ router.use(function(req, res, next) {
 router.route( '/resources')
 	.post(function(req, res) {
 		var r = req.body;
-		console.log(req);
+		console.log(req.body);
 
 		r.createDate = new Date();
 		if (!(req.body.name || req.body.url)) {
