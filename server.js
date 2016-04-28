@@ -68,7 +68,7 @@ router.route( '/resources')
 					}
 				});
 			} else {
-				handleError(res, "Invalid user input", "Must provide a name, url, and summary", 400);
+				handleError(res, "Invalid user input", "Please update your url to a valid url. Include http:// or https:// if need be.", 400);
 			}
 		}
 		// r.name = req.body.name;
