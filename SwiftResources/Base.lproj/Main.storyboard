@@ -355,23 +355,6 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-yZ-LHP">
                                             <rect key="frame" x="8" y="8" width="584" height="132"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcE-ns-QnR">
-                                                    <rect key="frame" x="8" y="86" width="251" height="29"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                    <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
-                                                    <state key="normal" title="Save">
-                                                        <color key="titleColor" red="0.31768830128205128" green="0.31768830128205128" blue="0.31768830128205128" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oif-nL-pwg">
-                                                    <rect key="frame" x="325" y="86" width="251" height="29"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                    <state key="normal" title="Visit">
-                                                        <color key="titleColor" red="0.31768830128205128" green="0.31768830128205128" blue="0.31768830128205128" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnt-Le-awC">
                                                     <rect key="frame" x="8" y="8" width="470" height="28"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
@@ -381,22 +364,10 @@
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="oif-nL-pwg" secondAttribute="bottom" constant="17" id="0NA-32-fPD"/>
-                                                <constraint firstAttribute="bottom" secondItem="kcE-ns-QnR" secondAttribute="bottom" constant="17" id="37h-Kg-ZAn"/>
                                                 <constraint firstItem="fnt-Le-awC" firstAttribute="leading" secondItem="WGx-yZ-LHP" secondAttribute="leadingMargin" id="EXL-nv-UUS"/>
-                                                <constraint firstItem="oif-nL-pwg" firstAttribute="leading" secondItem="kcE-ns-QnR" secondAttribute="trailing" constant="66" id="GFM-Tc-H7w"/>
                                                 <constraint firstItem="fnt-Le-awC" firstAttribute="top" secondItem="WGx-yZ-LHP" secondAttribute="top" constant="8" id="Lbd-QX-Uhx"/>
-                                                <constraint firstItem="oif-nL-pwg" firstAttribute="width" secondItem="kcE-ns-QnR" secondAttribute="width" id="OI9-au-jb6"/>
                                                 <constraint firstAttribute="trailing" secondItem="fnt-Le-awC" secondAttribute="trailing" constant="106" id="YcN-x4-eWm"/>
-                                                <constraint firstItem="kcE-ns-QnR" firstAttribute="leading" secondItem="WGx-yZ-LHP" secondAttribute="leading" constant="8" id="cHM-ys-bRr"/>
-                                                <constraint firstAttribute="trailing" secondItem="oif-nL-pwg" secondAttribute="trailing" constant="8" id="dLQ-u3-phu"/>
-                                                <constraint firstItem="oif-nL-pwg" firstAttribute="width" secondItem="kcE-ns-QnR" secondAttribute="width" constant="-8" id="oa1-tB-Dgy"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="oa1-tB-Dgy"/>
-                                                </mask>
-                                            </variation>
                                         </view>
                                     </subviews>
                                     <constraints>
