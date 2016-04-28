@@ -49,17 +49,17 @@ router.route( '/resources')
 		console.log(req);
 
 		r.createDate = new Date();
-		if (!(req.body.firstName || req.body.lastName)) {
+		if (!(req.body.name || req.body.url)) {
 			handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+		} else {
+			db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
+				if(err) {
+					handleError(res, err.message, "Failed to create new resource.");
+				} else {
+					res.status(201).json(doc.ops[0]);
+				}
+			});
 		}
-
-		db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
-			if(err) {
-				handleError(res, err.message, "Failed to create new resource.");
-			} else {
-				res.status(201).json(doc.ops[0]);
-			}
-		});
 		// r.name = req.body.name;
 		// r.url = req.body.url;
 		// r.summary = req.body.summary
