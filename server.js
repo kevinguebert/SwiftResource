@@ -84,11 +84,43 @@ router.route( '/resources')
 	.get(function(req, res) {
 		db.collection(RESOURCES_COLLECTION).find({}).toArray(function(err, docs) {
 			if(err) {
-				handleError(res, err.message, "Failed to get contacts.");
+				handleError(res, err.message, "Failed to get resources.");
 			} else {
 				res.status(200).json(docs);
 			}
 		})
+	});
+	.get("/resources/:id", function(req, res) {
+	  db.collection(RESOURCES_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+	    if (err) {
+	      handleError(res, err.message, "Failed to get resource");
+	    } else {
+	      res.status(200).json(doc);
+	    }
+	  });
+	});
+
+	.put("/resources/:id", function(req, res) {
+	  var updateDoc = req.body;
+	  delete updateDoc._id;
+
+	  db.collection(RESOURCES_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
+	    if (err) {
+	      handleError(res, err.message, "Failed to update resource");
+	    } else {
+	      res.status(204).end();
+	    }
+	  });
+	});
+
+	.delete("/resources/:id", function(req, res) {
+	  db.collection(RESOURCES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+	    if (err) {
+	      handleError(res, err.message, "Failed to delete resource");
+	    } else {
+	      res.status(204).end();
+	    }
+	  });
 	});
 
 router.get('/', function(req, res) {
