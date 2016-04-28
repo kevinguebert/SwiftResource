@@ -4,6 +4,7 @@ var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
+var valid = require('valid-url');
 var ObjectID = mongodb.ObjectID;
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 
@@ -46,29 +47,32 @@ router.use(function(req, res, next) {
 router.route( '/resources')
 	.post(function(req, res) {
 		var r = req.body;
-		console.log(req.body);
 
-		r.createDate = new Date();
-		if (!(req.body.name || req.body.url)) {
-			handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+		if(req.body.is_swift != undefined) {
+			if(req.body.is_swift) r.is_swift = true;
+			else r.is_swift = false;
 		} else {
-			db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
-				if(err) {
-					handleError(res, err.message, "Failed to create new resource.");
-				} else {
-					res.status(201).json(doc.ops[0]);
-				}
-			});
+			r.is_swift = false;
+		}
+		r.createDate = new Date();
+		if (!(req.body.name || req.body.url || req.body.summary)) {
+			handleError(res, "Invalid user input", "Must provide a name, url, and summary", 400);
+		} else {
+			if(valid.isUri(req.body.url)) {
+				db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
+					if(err) {
+						handleError(res, err.message, "Failed to create new resource.");
+					} else {
+						res.status(201).json(doc.ops[0]);
+					}
+				});
+			} else {
+				handleError(res, "Invalid user input", "Must provide a name, url, and summary", 400);
+			}
 		}
 		// r.name = req.body.name;
 		// r.url = req.body.url;
 		// r.summary = req.body.summary
-		// if(req.body.is_swift != undefined) {
-		// 	if(req.body.is_swift) r.is_swift = true;
-		// 	else r.is_swift = false;
-		// } else {
-		// 	r.is_swift = false;
-		// }
 
 		// r.save(function(err) {
 		// 	if(err)

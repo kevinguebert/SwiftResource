@@ -1,9 +1,10 @@
 {
-    "name": "swift-resource-api",
-    "main": "server.js",
-    "dependencies": {
-        "express": "~4.0.0",
-        "mongodb": "^2.1.6",
-        "body-parser": "~1.0.1"
-    }
+  "name": "swift-resource-api",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "express": "~4.0.0",
+    "mongodb": "^2.1.6",
+    "valid-url": "^1.0.9"
+  }
 }
