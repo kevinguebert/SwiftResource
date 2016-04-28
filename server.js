@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 var ObjectID = mongodb.ObjectID;
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
+
+var RESOURCES_COLLECTION = "resources";
 var db;
 
 // Connect to the database before starting the application server.
@@ -26,14 +28,17 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   });
 });
 
-var Resource = require('./app/models/resource');
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var port = process.env.PORT || 8080;
 
 var router = express.Router();
+
+function handleError(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
 
 router.use(function(req, res, next) {
 	console.log("Sittin', Waitin', Wishin'");
@@ -42,30 +47,44 @@ router.use(function(req, res, next) {
 
 router.route( '/resources')
 	.post(function(req, res) {
-		var r = new Resource();
-		r.name = req.body.name;
-		r.url = req.body.url;
-		r.summary = req.body.summary
-		if(req.body.is_swift != undefined) {
-			if(req.body.is_swift) r.is_swift = true;
-			else r.is_swift = false;
-		} else {
-			r.is_swift = false;
-		}
+		var r = req.body;
 
-		r.save(function(err) {
-			if(err)
-				res.send(err);
-			res.json({message: 'Resource created'});
+		r.createDate = new Date();
+		 // if (!(req.body.firstName || req.body.lastName)) {
+		 //    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+		 //  }
+
+		db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
+			if(err) {
+				handleError(res, err.message, "Failed to create new resource.");
+			} else {
+				res.status(201).json(doc.ops[0]);
+			}
 		});
+		// r.name = req.body.name;
+		// r.url = req.body.url;
+		// r.summary = req.body.summary
+		// if(req.body.is_swift != undefined) {
+		// 	if(req.body.is_swift) r.is_swift = true;
+		// 	else r.is_swift = false;
+		// } else {
+		// 	r.is_swift = false;
+		// }
+
+		// r.save(function(err) {
+		// 	if(err)
+		// 		res.send(err);
+		// 	res.json({message: 'Resource created'});
+		// });
 	})
 	.get(function(req, res) {
-		Resource.find(function(err, resources) {
-			if(err)
-				res.send(err)
-
-			res.send(resources)
-		});
+		db.collection(RESOURCES_COLLECTION).find({}).toArray(function(err, docs) {
+			if(err) {
+				handleError(res, err.message, "Failed to get contacts.");
+			} else {
+				res.status(200).json(docs);
+			}
+		})
 	});
 
 router.get('/', function(req, res) {
