@@ -54,6 +54,7 @@ router.route( '/resources')
 		} else {
 			r.is_swift = false;
 		}
+		console.log(req.body);
 		r.createDate = new Date();
 		if (!(req.body.name || req.body.url || req.body.summary)) {
 			handleError(res, "Invalid user input", "Must provide a name, url, and summary", 400);
