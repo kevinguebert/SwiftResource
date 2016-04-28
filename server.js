@@ -44,84 +44,84 @@ router.use(function(req, res, next) {
 	next();
 });
 
-router.route( '/resources')
-	.post(function(req, res) {
-		var r = req.body;
+app.post("/resources", function(req, res) {
+	var r = req.body;
 
-		if(req.body.is_swift != undefined) {
-			if(req.body.is_swift) r.is_swift = true;
-			else r.is_swift = false;
+	if(req.body.is_swift != undefined) {
+		if(req.body.is_swift) r.is_swift = true;
+		else r.is_swift = false;
+	} else {
+		r.is_swift = false;
+	}
+	console.log(req.body);
+	r.createDate = new Date();
+	if (!(req.body.name || req.body.url || req.body.summary)) {
+		handleError(res, "Invalid user input", "Must provide a name, url, and summary", 400);
+	} else {
+		if(valid.isUri(req.body.url)) {
+			db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
+				if(err) {
+					handleError(res, err.message, "Failed to create new resource.");
+				} else {
+					res.status(201).json(doc.ops[0]);
+				}
+			});
 		} else {
-			r.is_swift = false;
+			handleError(res, "Invalid user input", "Please update your url to a valid url. Include http:// or https:// if need be.", 400);
 		}
-		console.log(req.body);
-		r.createDate = new Date();
-		if (!(req.body.name || req.body.url || req.body.summary)) {
-			handleError(res, "Invalid user input", "Must provide a name, url, and summary", 400);
+	}
+	// r.name = req.body.name;
+	// r.url = req.body.url;
+	// r.summary = req.body.summary
+
+	// r.save(function(err) {
+	// 	if(err)
+	// 		res.send(err);
+	// 	res.json({message: 'Resource created'});
+	// });
+});
+app.get("/resources", function(req, res) {
+	db.collection(RESOURCES_COLLECTION).find({}).toArray(function(err, docs) {
+		if(err) {
+			handleError(res, err.message, "Failed to get resources.");
 		} else {
-			if(valid.isUri(req.body.url)) {
-				db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
-					if(err) {
-						handleError(res, err.message, "Failed to create new resource.");
-					} else {
-						res.status(201).json(doc.ops[0]);
-					}
-				});
-			} else {
-				handleError(res, "Invalid user input", "Please update your url to a valid url. Include http:// or https:// if need be.", 400);
-			}
+			res.status(200).json(docs);
 		}
-		// r.name = req.body.name;
-		// r.url = req.body.url;
-		// r.summary = req.body.summary
-
-		// r.save(function(err) {
-		// 	if(err)
-		// 		res.send(err);
-		// 	res.json({message: 'Resource created'});
-		// });
-	})
-	.get(function(req, res) {
-		db.collection(RESOURCES_COLLECTION).find({}).toArray(function(err, docs) {
-			if(err) {
-				handleError(res, err.message, "Failed to get resources.");
-			} else {
-				res.status(200).json(docs);
-			}
-		})
-	})
-	// .get("/:id", function(req, res) {
-	// 	db.collection(RESOURCES_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
-	// 		if (err) {
-	// 			handleError(res, err.message, "Failed to get resource");
-	// 		} else {
-	// 		    res.status(200).json(doc);
-	// 		}
-	// 	});
-	// })
-
-	.put("/:id", function(req, res) {
-	  var updateDoc = req.body;
-	  delete updateDoc._id;
-
-	  db.collection(RESOURCES_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
-	    if (err) {
-	      handleError(res, err.message, "Failed to update resource");
-	    } else {
-	      res.status(204).end();
-	    }
-	  });
-	})
-
-	.delete("/:id", function(req, res) {
-	  db.collection(RESOURCES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
-	    if (err) {
-	      handleError(res, err.message, "Failed to delete resource");
-	    } else {
-	      res.status(204).end();
-	    }
-	  });
 	});
+});
+
+app.get("/resources/:id", function(req, res) {
+	db.collection(RESOURCES_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
+		if (err) {
+			handleError(res, err.message, "Failed to get resource");
+		} else {
+		    res.status(200).json(doc);
+		}
+	});
+});
+
+app.put("/resources/:id", function(req, res) {
+  var updateDoc = req.body;
+  delete updateDoc._id;
+
+  db.collection(RESOURCES_COLLECTION).updateOne({_id: new ObjectID(req.params.id)}, updateDoc, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to update resource");
+    } else {
+      res.status(204).end();
+    }
+  });
+});
+
+app.delete("/resources//:id", function(req, res) {
+  db.collection(RESOURCES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
+    if (err) {
+      handleError(res, err.message, "Failed to delete resource");
+    } else {
+      res.status(204).end();
+    }
+  });
+});
 
 router.get('/', function(req, res) {
 	res.json({message: "horrary"});
