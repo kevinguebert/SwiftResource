@@ -46,11 +46,12 @@ router.use(function(req, res, next) {
 router.route( '/resources')
 	.post(function(req, res) {
 		var r = req.body;
+		console.log(req.body);
 
 		r.createDate = new Date();
-		 // if (!(req.body.firstName || req.body.lastName)) {
-		 //    handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
-		 //  }
+		if (!(req.body.firstName || req.body.lastName)) {
+			handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+		}
 
 		db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
 			if(err) {
