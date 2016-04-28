@@ -20,6 +20,26 @@ router.use(function(req, res, next) {
 	next();
 });
 
+router.route( '/resources')
+	.post(function(req, res) {
+		var r = new Resource();
+		r.name = req.body.name;
+		r.url = req.body.url;
+		r.summary = req.body.summary
+		if(req.body.is_swift != undefined) {
+			if(req.body.is_swift) r.is_swift = true;
+			else r.is_swift = false;
+		} else {
+			r.is_swift = false;
+		}
+
+		r.save(function(err) {
+			if(err)
+				res.send(err);
+			res.json({message: 'Resource created'});
+		});
+	});
+
 router.get('/', function(req, res) {
 	res.json({message: "horrary"});
 });
