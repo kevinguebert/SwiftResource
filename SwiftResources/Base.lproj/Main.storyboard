@@ -355,18 +355,28 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-yZ-LHP">
                                             <rect key="frame" x="8" y="8" width="584" height="132"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnt-Le-awC">
-                                                    <rect key="frame" x="8" y="8" width="470" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnt-Le-awC">
+                                                    <rect key="frame" x="8" y="8" width="470" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" red="0.23497596153846156" green="0.23497596153846156" blue="0.23497596153846156" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfl-FF-DFY">
+                                                    <rect key="frame" x="8" y="37" width="568" height="26"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Pfl-FF-DFY" secondAttribute="trailing" constant="8" id="6pq-0M-5B0"/>
                                                 <constraint firstItem="fnt-Le-awC" firstAttribute="leading" secondItem="WGx-yZ-LHP" secondAttribute="leadingMargin" id="EXL-nv-UUS"/>
                                                 <constraint firstItem="fnt-Le-awC" firstAttribute="top" secondItem="WGx-yZ-LHP" secondAttribute="top" constant="8" id="Lbd-QX-Uhx"/>
+                                                <constraint firstItem="Pfl-FF-DFY" firstAttribute="top" secondItem="fnt-Le-awC" secondAttribute="bottom" constant="8" id="PQN-IL-EL4"/>
                                                 <constraint firstAttribute="trailing" secondItem="fnt-Le-awC" secondAttribute="trailing" constant="106" id="YcN-x4-eWm"/>
+                                                <constraint firstItem="Pfl-FF-DFY" firstAttribute="leading" secondItem="WGx-yZ-LHP" secondAttribute="leading" constant="8" id="clm-c5-2Zo"/>
+                                                <constraint firstAttribute="bottom" secondItem="Pfl-FF-DFY" secondAttribute="bottom" constant="8" id="vxT-Ba-SPU"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -380,6 +390,7 @@
                                 <color key="backgroundColor" red="0.96432291666666647" green="0.96432291666666647" blue="0.96432291666666647" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="cardView" destination="WGx-yZ-LHP" id="0A3-23-49U"/>
+                                    <outlet property="resourcesSummary" destination="Pfl-FF-DFY" id="LYl-er-Y1F"/>
                                     <outlet property="resourcesTitle" destination="fnt-Le-awC" id="je5-lf-Rdc"/>
                                 </connections>
                             </tableViewCell>

@@ -33,6 +33,7 @@ class ResourcesTableViewController: UITableViewController {
         
         self.tableView.backgroundColor = UIColor.darkGrayColor()
         self.tableView.backgroundView?.backgroundColor = UIColor.darkGrayColor()
+        self.tableView.sizeToFit()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
