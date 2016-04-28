@@ -4,7 +4,7 @@ var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
-mongoose.connect('mongodb://swift:WWDC2016@ds021741.mlab.com:21741/heroku_qh2b8v0v'); // connect to our database
+mongoose.connect('mongodb://heroku_qh2b8v0v:a82n9agad4vl158c0u8atbs3cf@ds021741.mlab.com:21741/heroku_qh2b8v0v'); // connect to our database
 
 var Resource = require('./app/models/resource');
 
