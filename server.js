@@ -113,7 +113,7 @@ app.put("/resources/:id", function(req, res) {
   });
 });
 
-app.delete("/resources//:id", function(req, res) {
+app.delete("/resources/:id", function(req, res) {
   db.collection(RESOURCES_COLLECTION).deleteOne({_id: new ObjectID(req.params.id)}, function(err, result) {
     if (err) {
       handleError(res, err.message, "Failed to delete resource");
