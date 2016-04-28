@@ -90,4 +90,4 @@ router.get('/', function(req, res) {
 });
 
 app.use('/api', router);
-console.log('Magic is happening on port ' + port);
+console.log('Magic is happening on port');
