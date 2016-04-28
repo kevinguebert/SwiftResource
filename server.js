@@ -89,7 +89,7 @@ router.route( '/resources')
 				res.status(200).json(docs);
 			}
 		})
-	});
+	})
 	.get("/resources/:id", function(req, res) {
 	  db.collection(RESOURCES_COLLECTION).findOne({ _id: new ObjectID(req.params.id) }, function(err, doc) {
 	    if (err) {
