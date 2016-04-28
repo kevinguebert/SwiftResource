@@ -38,6 +38,14 @@ router.route( '/resources')
 				res.send(err);
 			res.json({message: 'Resource created'});
 		});
+	})
+	.get(function(req, res) {
+		Resource.fin(function(err, resources) {
+			if(err)
+				res.send(err)
+
+			res.send(resources)
+		});
 	});
 
 router.get('/', function(req, res) {
