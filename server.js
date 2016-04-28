@@ -40,7 +40,7 @@ router.route( '/resources')
 		});
 	})
 	.get(function(req, res) {
-		Resource.fin(function(err, resources) {
+		Resource.find(function(err, resources) {
 			if(err)
 				res.send(err)
 
