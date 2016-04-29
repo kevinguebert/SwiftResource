@@ -6,6 +6,14 @@ var bodyParser = require('body-parser');
 var mongodb = require('mongodb');
 var valid = require('valid-url');
 var ObjectID = mongodb.ObjectID;
+var productHuntAPI = require('producthunt');
+
+var productHunt = new productHuntAPI({
+  client_id: "31e9bbb73d44db42834d4dc5d6c88f119da8ee6434eb66800ee3e3bef88070e7"// your client_id
+  client_secret: "4c2f2d3ce053e51b829882737f54207a6347206eb314702cf60bbb942f8e5ea1"// your client_secret
+  grant_type: 'client_credentials'
+});
+
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 
 var RESOURCES_COLLECTION = "resources";
@@ -48,6 +56,12 @@ router.use(function(req, res, next) {
     next();
 });
 
+app.get("/producthunt", function(req, res) {
+	productHunt.posts.index({search: {category: 'swift'}}, function (err, res) {
+		console.log(res);
+        // res.status(201).json(res);
+	});
+});
 app.post("/resources", function(req, res) {
     var r = req.body;
 
