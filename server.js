@@ -59,7 +59,7 @@ router.use(function(req, res, next) {
 app.get("/producthunt", function(req, res) {
 	productHunt.posts.index({search: {category: 'swift'}}, function (err, res) {
 		if(res.body != undefined) {
-			res.status(200).json(res.body);
+			res.json(res.body);
 		}
         // res.status(201).json(res);
 	});
