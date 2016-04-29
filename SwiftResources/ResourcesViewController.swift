@@ -1,19 +1,20 @@
 //
-//  ResourcesTableViewController.swift
+//  ResourcesViewController.swift
 //  SwiftResources
 //
-//  Created by Kevin Guebert on 4/28/16.
+//  Created by Kevin Guebert on 4/29/16.
 //  Copyright © 2016 Kevin Guebert. All rights reserved.
 //
 
 import UIKit
 
-class ResourcesTableViewController: UITableViewController {
+class ResourcesViewController: UIViewController, UITableViewDelegate {
     
     var resources = [Resource]()
     var store: ResourceStore!
     let resourceTableDataSource = ResourceTableDataSource()
     
+    @IBOutlet var resourcesTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +25,8 @@ class ResourcesTableViewController: UITableViewController {
         rightButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = rightButton
         
-        self.tableView.dataSource = resourceTableDataSource
-        self.tableView.delegate = self
+        resourcesTableView.dataSource = resourceTableDataSource
+        resourcesTableView.delegate = self
         store.fetchAllResources() {
             (resourcesResult) -> Void in
             
@@ -33,17 +34,17 @@ class ResourcesTableViewController: UITableViewController {
             let allResources = try! self.store.fetchMainQueueResources(predicate: nil, sortDescriptors: [sortByDateAdded])
             NSOperationQueue.mainQueue().addOperationWithBlock(){
                 self.resourceTableDataSource.resources = allResources
-                self.tableView.reloadData()
-                self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.resourcesTableView.reloadData()
+                self.resourcesTableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
             }
         }
         
-        self.tableView.backgroundColor = UIColor.darkGrayColor()
-        self.tableView.backgroundView?.backgroundColor = UIColor.darkGrayColor()
-        self.tableView.sizeToFit()
+        resourcesTableView.backgroundColor = UIColor.darkGrayColor()
+        resourcesTableView.backgroundView?.backgroundColor = UIColor.darkGrayColor()
+        resourcesTableView.sizeToFit()
     }
-   
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
             return UITableViewAutomaticDimension
@@ -54,7 +55,7 @@ class ResourcesTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
             return 200
@@ -64,10 +65,10 @@ class ResourcesTableViewController: UITableViewController {
         return 45
         }
     }
-   
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        if let imageCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? ResourceImageViewCell {
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if let imageCell = resourcesTableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? ResourceImageViewCell {
             imageCell.scrollViewDidScroll(scrollView)
         }
     }

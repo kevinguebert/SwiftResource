@@ -23,6 +23,7 @@
 		809742F81CD3D03900E366B8 /* Resource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 809742F61CD3D03900E366B8 /* Resource.xcdatamodeld */; };
 		809742FD1CD3D0B400E366B8 /* Resource+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809742FB1CD3D0B400E366B8 /* Resource+CoreDataProperties.swift */; };
 		809742FE1CD3D0B400E366B8 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809742FC1CD3D0B400E366B8 /* Resource.swift */; };
+		809743001CD3F91700E366B8 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809742FF1CD3F91700E366B8 /* ResourcesViewController.swift */; };
 		80CEA9241CD23F2000C1E250 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */; };
 		C32A789175018FE1874E5DCE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2033275864FE1C500EA5BF /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		809742F71CD3D03900E366B8 /* Resource.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Resource.xcdatamodel; sourceTree = "<group>"; };
 		809742FB1CD3D0B400E366B8 /* Resource+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Resource+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		809742FC1CD3D0B400E366B8 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		809742FF1CD3F91700E366B8 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		FB2033275864FE1C500EA5BF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 				809742F61CD3D03900E366B8 /* Resource.xcdatamodeld */,
 				809742FB1CD3D0B400E366B8 /* Resource+CoreDataProperties.swift */,
 				809742FC1CD3D0B400E366B8 /* Resource.swift */,
+				809742FF1CD3F91700E366B8 /* ResourcesViewController.swift */,
 			);
 			path = SwiftResources;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809743001CD3F91700E366B8 /* ResourcesViewController.swift in Sources */,
 				80CEA9241CD23F2000C1E250 /* CategoryTableViewController.swift in Sources */,
 				80566F611CD2557200DA015A /* ResourceCollectionViewController.swift in Sources */,
 				809742FD1CD3D0B400E366B8 /* Resource+CoreDataProperties.swift in Sources */,

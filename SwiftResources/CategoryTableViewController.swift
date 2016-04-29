@@ -62,6 +62,10 @@ class CategoryTableViewController: UITableViewController {
             let destinationVC = segue.destinationViewController as! ResourcesTableViewController
             destinationVC.store = store
         }
+        if segue.identifier == "ShowDesignResources" {
+            let destinationVC = segue.destinationViewController as! ResourcesViewController
+            destinationVC.store = store
+        }
         
     }
 }
