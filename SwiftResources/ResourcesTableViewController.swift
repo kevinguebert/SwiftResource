@@ -28,16 +28,10 @@ class ResourcesTableViewController: UITableViewController {
         store.fetchAllResources() {
             (resourcesResult) -> Void in
             
+            let sortByDateAdded = NSSortDescriptor(key: "dateAdded", ascending: true)
+            let allResources = try! self.store.fetchMainQueueResources(predicate: nil, sortDescriptors: [sortByDateAdded])
             NSOperationQueue.mainQueue().addOperationWithBlock(){
-            
-                switch resourcesResult {
-                case let .Success(resources):
-                    print("Successfully found \(resources.count) resources.")
-                    self.resourceTableDataSource.resources = resources
-                case let .Failure(error):
-                    self.resourceTableDataSource.resources.removeAll()
-                    print("Error fetching resources: \(error)")
-                }
+                self.resourceTableDataSource.resources = allResources
                 self.tableView.reloadData()
                 self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
             }
@@ -51,8 +45,10 @@ class ResourcesTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             return UITableViewAutomaticDimension
+        case 1:
+            return 130
         default: ()
-        return 150
+        return 45
         }
     }
     
@@ -60,8 +56,10 @@ class ResourcesTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             return 200
+        case 1:
+            return 130
         default: ()
-        return 150
+        return 45
         }
     }
    

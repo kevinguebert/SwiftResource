@@ -69,7 +69,7 @@ struct ResourceAPI {
         return url!
     }
     
-    static func resourcesFromJSONData(data: NSData) -> ResourcesResult {
+    static func resourcesFromJSONData(data: NSData, inContext context: NSManagedObjectContext) -> ResourcesResult {
         do {
             let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: [])
             guard let jsonDictionary = jsonObject as? [NSObject:AnyObject],
@@ -79,7 +79,7 @@ struct ResourceAPI {
             }
             var finalResources = [Resource]()
             for resourceJSON in resourcesArray {
-                if let resource = resourceFromJSONData(resourceJSON) {
+                if let resource = resourceFromJSONData(resourceJSON, inContext: context) {
                     finalResources.append(resource)
                 }
             }
@@ -93,7 +93,7 @@ struct ResourceAPI {
         }
     }
     
-    private static func resourceFromJSONData(json: [String: AnyObject]) -> Resource? {
+    private static func resourceFromJSONData(json: [String: AnyObject], inContext context: NSManagedObjectContext) -> Resource? {
         guard let
             resourceID = json["_id"] as? String,
             title = json["title"] as? String,
@@ -107,7 +107,19 @@ struct ResourceAPI {
                 return nil
         }
         
-        return Resource(title: title, resourceID: resourceID, url: url, dateAdded: dateAdded, summary: summary, category: category, is_swift: is_swift)
+        var resource: Resource!
+        context.performBlock() {
+            resource = NSEntityDescription.insertNewObjectForEntityForName("Resource", inManagedObjectContext: context) as! Resource
+            resource.title = title
+            resource.resourceID = resourceID
+            resource.summary = summary
+            resource.category = category
+            resource.is_swift = is_swift
+            resource.dateAdded = dateAdded
+            resource.url = url
+        }
+        
+        return resource
         
     }
 
