@@ -15,12 +15,11 @@
 		800A5D3D1CD2780400F680E1 /* ResourcesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800A5D3C1CD2780400F680E1 /* ResourcesTableViewCell.swift */; };
 		800A5D431CD27F7F00F680E1 /* ResourceImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800A5D421CD27F7F00F680E1 /* ResourceImageViewCell.swift */; };
 		802BB3A11CD395100056D0EC /* ResourceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3A01CD395100056D0EC /* ResourceAPI.swift */; };
-		802BB3A41CD398790056D0EC /* Resource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3A21CD398790056D0EC /* Resource.xcdatamodeld */; };
-		802BB3AB1CD398EF0056D0EC /* Resource+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3A91CD398EF0056D0EC /* Resource+CoreDataProperties.swift */; };
 		802BB3AC1CD398EF0056D0EC /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3AA1CD398EF0056D0EC /* Resource.swift */; };
+		802BB3AE1CD3996E0056D0EC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3AD1CD3996E0056D0EC /* CoreDataStack.swift */; };
+		802BB3B01CD39AB30056D0EC /* ResourceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3AF1CD39AB30056D0EC /* ResourceStore.swift */; };
+		802BB3B21CD39DEA0056D0EC /* ResourceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3B11CD39DEA0056D0EC /* ResourceDataSource.swift */; };
 		80566F611CD2557200DA015A /* ResourceCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80566F601CD2557200DA015A /* ResourceCollectionViewController.swift */; };
-		80566F631CD25D4F00DA015A /* ResourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80566F621CD25D4F00DA015A /* ResourceCollectionViewCell.swift */; };
-		807E6B8B1CD000AF00F3AD54 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E6B8A1CD000AF00F3AD54 /* Resource.swift */; };
 		80CEA9241CD23F2000C1E250 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */; };
 		C32A789175018FE1874E5DCE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2033275864FE1C500EA5BF /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -38,12 +37,11 @@
 		800A5D3C1CD2780400F680E1 /* ResourcesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTableViewCell.swift; sourceTree = "<group>"; };
 		800A5D421CD27F7F00F680E1 /* ResourceImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceImageViewCell.swift; sourceTree = "<group>"; };
 		802BB3A01CD395100056D0EC /* ResourceAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceAPI.swift; path = ../ResourceAPI.swift; sourceTree = "<group>"; };
-		802BB3A31CD398790056D0EC /* Resource.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Resource.xcdatamodel; sourceTree = "<group>"; };
-		802BB3A91CD398EF0056D0EC /* Resource+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Resource+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		802BB3AA1CD398EF0056D0EC /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		802BB3AD1CD3996E0056D0EC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		802BB3AF1CD39AB30056D0EC /* ResourceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceStore.swift; sourceTree = "<group>"; };
+		802BB3B11CD39DEA0056D0EC /* ResourceDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceDataSource.swift; sourceTree = "<group>"; };
 		80566F601CD2557200DA015A /* ResourceCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceCollectionViewController.swift; sourceTree = "<group>"; };
-		80566F621CD25D4F00DA015A /* ResourceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceCollectionViewCell.swift; sourceTree = "<group>"; };
-		807E6B8A1CD000AF00F3AD54 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Model/Resource.swift; sourceTree = "<group>"; };
 		80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		FB2033275864FE1C500EA5BF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,21 +97,20 @@
 			isa = PBXGroup;
 			children = (
 				802BB3A01CD395100056D0EC /* ResourceAPI.swift */,
-				802BB3A21CD398790056D0EC /* Resource.xcdatamodeld */,
 				80018B241CCFFC3E00EBA8EF /* AppDelegate.swift */,
 				80018B281CCFFC3E00EBA8EF /* Main.storyboard */,
 				80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */,
 				80566F601CD2557200DA015A /* ResourceCollectionViewController.swift */,
 				800A5D3A1CD277D600F680E1 /* ResourcesTableViewController.swift */,
 				800A5D3C1CD2780400F680E1 /* ResourcesTableViewCell.swift */,
-				807E6B8A1CD000AF00F3AD54 /* Resource.swift */,
-				80566F621CD25D4F00DA015A /* ResourceCollectionViewCell.swift */,
 				80018B2B1CCFFC3E00EBA8EF /* Assets.xcassets */,
 				80018B2D1CCFFC3E00EBA8EF /* LaunchScreen.storyboard */,
 				80018B301CCFFC3E00EBA8EF /* Info.plist */,
 				800A5D421CD27F7F00F680E1 /* ResourceImageViewCell.swift */,
-				802BB3A91CD398EF0056D0EC /* Resource+CoreDataProperties.swift */,
 				802BB3AA1CD398EF0056D0EC /* Resource.swift */,
+				802BB3AD1CD3996E0056D0EC /* CoreDataStack.swift */,
+				802BB3AF1CD39AB30056D0EC /* ResourceStore.swift */,
+				802BB3B11CD39DEA0056D0EC /* ResourceDataSource.swift */,
 			);
 			path = SwiftResources;
 			sourceTree = "<group>";
@@ -241,16 +238,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				80CEA9241CD23F2000C1E250 /* CategoryTableViewController.swift in Sources */,
-				807E6B8B1CD000AF00F3AD54 /* Resource.swift in Sources */,
 				80566F611CD2557200DA015A /* ResourceCollectionViewController.swift in Sources */,
+				802BB3AE1CD3996E0056D0EC /* CoreDataStack.swift in Sources */,
 				800A5D3D1CD2780400F680E1 /* ResourcesTableViewCell.swift in Sources */,
 				800A5D431CD27F7F00F680E1 /* ResourceImageViewCell.swift in Sources */,
-				802BB3AB1CD398EF0056D0EC /* Resource+CoreDataProperties.swift in Sources */,
 				802BB3A11CD395100056D0EC /* ResourceAPI.swift in Sources */,
+				802BB3B21CD39DEA0056D0EC /* ResourceDataSource.swift in Sources */,
 				800A5D3B1CD277D600F680E1 /* ResourcesTableViewController.swift in Sources */,
-				802BB3A41CD398790056D0EC /* Resource.xcdatamodeld in Sources */,
+				802BB3B01CD39AB30056D0EC /* ResourceStore.swift in Sources */,
 				802BB3AC1CD398EF0056D0EC /* Resource.swift in Sources */,
-				80566F631CD25D4F00DA015A /* ResourceCollectionViewCell.swift in Sources */,
 				80018B251CCFFC3E00EBA8EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,19 +404,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		802BB3A21CD398790056D0EC /* Resource.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				802BB3A31CD398790056D0EC /* Resource.xcdatamodel */,
-			);
-			currentVersion = 802BB3A31CD398790056D0EC /* Resource.xcdatamodel */;
-			path = Resource.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 80018B191CCFFC3E00EBA8EF /* Project object */;
 }

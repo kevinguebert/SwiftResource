@@ -11,6 +11,9 @@ import FontAwesome_swift
 
 class CategoryTableViewController: UITableViewController {
     @IBOutlet var categoryTableView: UITableView!
+    var store: ResourceStore!
+//    let resourceDataSource = ResourceDataSource()
+    
     var absoluteCellHeights: [CGFloat] = [25, 25, 25, 25] {
         didSet {
             tableView.reloadData()
@@ -55,6 +58,10 @@ class CategoryTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         navigationItem.setHidesBackButton(true, animated: false)
+        if segue.identifier == "ShowResource" {
+            let destinationVC = segue.destinationViewController as! ResourcesTableViewController
+            destinationVC.store = store
+        }
         
     }
 }

@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backIndicatorImage = UIImage()
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage()
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(-20, 0), forBarMetrics: UIBarMetrics.Default)
+        
+        let rootViewController = window!.rootViewController as! UINavigationController
+        let resourcesViewController = rootViewController.topViewController as! CategoryTableViewController
+        resourcesViewController.store = ResourceStore()
+        
         return true
     }
 

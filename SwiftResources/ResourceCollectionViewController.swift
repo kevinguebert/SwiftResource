@@ -27,13 +27,13 @@ class ResourceCollectionViewController: UICollectionViewController, UICollection
         
         self.collectionView?.backgroundColor = UIColor(patternImage: UIImage(named: "LibrariesFrameworks")!)
        
-        for a in resourcesArray {
-            let resource = Resource()
-                resource.name = a[0]
-                resource.url = NSURL(string: a[1])
-                resource.summary = a[2]
-            resources.append(resource)
-        }
+//        for a in resourcesArray {
+//            let resource = Resource()
+//                resource.title = a[0]
+//                resource.url = NSURL(string: a[1])
+//                resource.summary = a[2]
+//            resources.append(resource)
+//        }
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,10 +51,10 @@ class ResourceCollectionViewController: UICollectionViewController, UICollection
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier = "resourceBasicCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! ResourceCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath)
         
-        let title = resources[indexPath.row].name
-        cell.title?.text = title
+//        let title = resources[indexPath.row].title
+//        cell.title?.text = title
         
         return cell
     }

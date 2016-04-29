@@ -26,7 +26,7 @@ enum ResourcesResult {
     case Failure(ErrorType)
 }
 
-enum ResourceError: ErrorType {
+enum APIError: ErrorType {
     case InvalidJSONData
 }
 
@@ -35,7 +35,7 @@ struct ResourceAPI {
     
     private static let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         return formatter
     }()
     
@@ -44,9 +44,7 @@ struct ResourceAPI {
         var queryItems = [NSURLQueryItem]()
         
         let baseParams = [
-            "method": method.rawValue,
-            "format": "json",
-            "nojsoncallback": "1"
+            "/": method.rawValue
         ]
         
         for (key, value) in baseParams {
@@ -61,32 +59,35 @@ struct ResourceAPI {
             }
         }
         components?.queryItems = queryItems
+    
         
         return components!.URL!
     }
     
     static func getResources() -> NSURL {
-        return resourceURL(method: .allResources, parameters: nil)
+        let url = NSURL(string: "\(baseURLString)/resources")
+        return url!
     }
     
-    static func resourcesFromJSONData(data: NSData, inContext context: NSManagedObjectContext) -> ResourcesResult {
+    static func resourcesFromJSONData(data: NSData) -> ResourcesResult {
         do {
             let jsonObject: AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: [])
             guard let jsonDictionary = jsonObject as? [NSObject:AnyObject],
                 resources = jsonDictionary["resources"] as? [String:AnyObject],
                 resourcesArray = resources["resource"] as? [[String:AnyObject]] else {
-                    return .Failure(ResourceError.InvalidJSONData)
+                    return .Failure(APIError.InvalidJSONData)
             }
-            
             var finalResources = [Resource]()
             for resourceJSON in resourcesArray {
-                if let resource = resourceFromJSONObject(resourcetoJSON, inContext: context) {
+                if let resource = resourceFromJSONData(resourceJSON) {
                     finalResources.append(resource)
                 }
             }
-            
+            print(finalResources.count)
+            print(resourcesArray.count)
             if finalResources.count == 0 && resourcesArray.count > 0 {
-                return .Failure(ResourceError.InvalidJSONData)
+                print("NO HERE")
+                return .Failure(APIError.InvalidJSONData)
             }
             return .Success(finalResources)
         }
@@ -95,39 +96,22 @@ struct ResourceAPI {
         }
     }
     
-    static func resourceFromJSONObject(json: [String: AnyObject], inContext context: NSManagedObjectContext) -> Resource? {
+    private static func resourceFromJSONData(json: [String: AnyObject]) -> Resource? {
         guard let
-            resourceID = json["id"] as? String,
+            resourceID = json["_id"] as? String,
             title = json["title"] as? String,
             summary = json["summary"] as? String,
             category = json["category"] as? String,
-            resourceURLString = json["url"] as? String,
-            url = NSURL(string: resourceURLString) else {
-            return nil
-        }
-    
-        let fetchRequest = NSFetchRequest(entityName: "Resource")
-        let predicate = NSPredicate(format: "resourceID == \(resourceID)")
-        fetchRequest.predicate = predicate
-        
-        var fetchPhotos: [Resource]!
-        context.performBlockAndWait() {
-            fetchPhotos = try! context.executeFetchRequest(fetchRequest) as! [Resource]
+            is_swift = json["is_swift"] as? Int,
+            dateString = json["date_added"] as? String,
+            dateAdded = dateFormatter.dateFromString(dateString),
+            urlString = json["url"] as? String,
+            url = NSURL(string: urlString) else {
+                return nil
         }
         
-        if fetchPhotos.count > 0 {
-            return fetchPhotos.first
-        }
+        return Resource(title: title, resourceID: resourceID, url: url, dateAdded: dateAdded, summary: summary, category: category, is_swift: is_swift)
         
-        var resource: Resource!
-        context.performBlockAndWait() {
-            resource = NSEntityDescription.insertNewObjectForEntityForName("Resource", inManagedObjectContext: context) as! Resource
-            resource.name = title
-            resource.resourceID = resourceID
-            resource.url = url
-            resource.summary = summary
-            resource.category = category
-        }
-        return resource
     }
+
 }

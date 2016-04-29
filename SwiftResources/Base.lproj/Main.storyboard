@@ -106,7 +106,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ec2-Xh-VbH" kind="show" id="JtV-Fu-ReZ"/>
+                                            <segue destination="ec2-Xh-VbH" kind="show" identifier="ShowResource" id="JtV-Fu-ReZ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" focusStyle="custom" rowHeight="175" id="8pO-de-0L7">
@@ -427,6 +427,10 @@
         <scene sceneID="L5V-9h-cjm">
             <objects>
                 <viewController id="H5N-ru-Eas" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7d3-iC-Kkl"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZZ-xs-JX1"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5Cw-1B-i2Y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
