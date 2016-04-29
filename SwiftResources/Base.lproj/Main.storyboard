@@ -290,6 +290,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.81103766025641022" green="0.81103766025641022" blue="0.81103766025641022" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" autoresizesSubviews="NO" contentMode="scaleToFill" id="cIb-YV-Wq7">
+                            <rect key="frame" x="0.0" y="64" width="600" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3in-wh-xkq">
+                                    <rect key="frame" x="8" y="8" width="54" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GNm-2J-kQi">
+                                    <rect key="frame" x="8" y="123" width="584" height="29"/>
+                                    <segments>
+                                        <segment title="First"/>
+                                        <segment title="Second"/>
+                                        <segment title=""/>
+                                        <segment title=""/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="GNm-2J-kQi" firstAttribute="trailing" secondItem="cIb-YV-Wq7" secondAttribute="trailingMargin" id="iPw-d8-nRy"/>
+                                <constraint firstItem="GNm-2J-kQi" firstAttribute="bottom" secondItem="cIb-YV-Wq7" secondAttribute="bottomMargin" id="krV-Nf-HR1"/>
+                                <constraint firstItem="GNm-2J-kQi" firstAttribute="leading" secondItem="3in-wh-xkq" secondAttribute="leading" id="lCg-Oo-Lkw"/>
+                                <constraint firstItem="3in-wh-xkq" firstAttribute="leading" secondItem="cIb-YV-Wq7" secondAttribute="leadingMargin" id="v9t-kf-dAX"/>
+                                <constraint firstItem="3in-wh-xkq" firstAttribute="top" secondItem="cIb-YV-Wq7" secondAttribute="topMargin" id="wTn-Vo-a9m"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resourceImageCell" rowHeight="300" id="oeX-vB-2gS" customClass="ResourceImageViewCell" customModule="SwiftResources" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="300"/>
@@ -424,6 +453,9 @@
                             <outlet property="delegate" destination="ec2-Xh-VbH" id="siJ-nb-MYn"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="searchViewDropdown" destination="cIb-YV-Wq7" id="l9T-oV-3rQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1V3-pL-alD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -446,23 +478,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eE7-Vf-xqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1237" y="-2704"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="L5V-9h-cjm">
-            <objects>
-                <viewController id="H5N-ru-Eas" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7d3-iC-Kkl"/>
-                        <viewControllerLayoutGuide type="bottom" id="pZZ-xs-JX1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5Cw-1B-i2Y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kim-nf-rGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
