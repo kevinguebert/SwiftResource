@@ -57,9 +57,9 @@ router.use(function(req, res, next) {
 });
 
 app.get("/producthunt", function(req, res) {
-	productHunt.posts.index({search: {category: 'swift'}}, function (err, res) {
-		if(res.body != undefined) {
-			res.json(res.body);
+	productHunt.posts.index({search: {category: 'swift'}}, function (err, result) {
+		if(result.body != undefined) {
+			res.json(result.body);
 		}
         // res.status(201).json(res);
 	});
