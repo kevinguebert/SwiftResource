@@ -60,7 +60,7 @@ app.get("/producthunt", function(req, res) {
 	productHunt.posts.index({search: {category: 'swift'}}, function (err, result) {
 		if(result.body != undefined) {
 			res.setHeader('Content-Type', 'application/json');
-			res.send(result.body.toJSON());
+			res.send(result.body);
 		}
         // res.status(201).json(res);
 	});
