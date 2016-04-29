@@ -57,7 +57,7 @@ router.use(function(req, res, next) {
 });
 
 app.get("/producthunt", function(req, res) {
-	productHunt.posts.index({search: {category: 'swift'}}, function (err, result) {
+	productHunt.posts.index({search: {category: 'swift ios'}}, function (err, result) {
 		if(result.body != undefined) {
 			res.setHeader('Content-Type', 'application/json');
 			res.send(result.body);
