@@ -59,13 +59,13 @@ app.post("/resources", function(req, res) {
     }
     console.log(req.body);
     r.createDate = new Date();
-    if (!(req.body.name || req.body.url || req.body.summary || req.body.category)) {
-        handleError(res, "Invalid user input", "Must provide a name, url, category, and summary", 400);
+    if (!(req.body.title || req.body.url || req.body.summary || req.body.category)) {
+        handleError(res, "Invalid user input", "Must provide a title, url, category, and summary", 400);
     } else {
         if (valid.isUri(req.body.url)) {
         	var resource = {
         		is_swift: r.is_swift,
-        		name: req.body.name,
+        		title: req.body.title,
         		url: req.body.url,
         		summary: req.body.summary,
         		category: req.body.category,
