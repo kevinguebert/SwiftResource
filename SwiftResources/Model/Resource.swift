@@ -12,4 +12,7 @@ class Resource {
     var name: String?
     var url: NSURL?
     var summary: String?
+    var category: String?
+    var is_swift: Bool?
+    var resourceID: Int?
 }
