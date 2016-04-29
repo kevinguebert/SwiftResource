@@ -25,6 +25,7 @@ class ResourcesTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = rightButton
         
         self.tableView.dataSource = resourceTableDataSource
+        self.tableView.delegate = self
         store.fetchAllResources() {
             (resourcesResult) -> Void in
             

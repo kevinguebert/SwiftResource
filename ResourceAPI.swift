@@ -107,6 +107,19 @@ struct ResourceAPI {
                 return nil
         }
         
+        let fetchRequest = NSFetchRequest(entityName: "Resource")
+        let predicate = NSPredicate(format: "resourceID == '\(resourceID)'")
+        fetchRequest.predicate = predicate
+        
+        var fetchedResources: [Resource]!
+        context.performBlockAndWait() {
+            fetchedResources = try! context.executeFetchRequest(fetchRequest) as! [Resource]
+        }
+        
+        if fetchedResources.count > 0 {
+            return fetchedResources.first
+        }
+        
         var resource: Resource!
         context.performBlock() {
             resource = NSEntityDescription.insertNewObjectForEntityForName("Resource", inManagedObjectContext: context) as! Resource
