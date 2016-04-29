@@ -88,7 +88,7 @@ app.get("/resources", function(req, res) {
         if (err) {
             handleError(res, err.message, "Failed to get resources.");
         } else {
-            res.status(200).json({"resources": docs});
+            res.status(200).json({"resources": { "total": docs.length, "resource": docs}});
         }
     });
 });
