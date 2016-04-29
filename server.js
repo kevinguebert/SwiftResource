@@ -68,7 +68,8 @@ app.post("/resources", function(req, res) {
         		name: req.body.name,
         		url: req.body.url,
         		summary: req.body.summary,
-        		category: req.body.category
+        		category: req.body.category,
+        		date_added: new Date()
         	};
             db.collection(RESOURCES_COLLECTION).insertOne(resource, function(err, doc) {
                 if (err) {
@@ -87,7 +88,7 @@ app.get("/resources", function(req, res) {
         if (err) {
             handleError(res, err.message, "Failed to get resources.");
         } else {
-            res.status(200).json(docs);
+            res.status(200).json({"resources": docs});
         }
     });
 });
