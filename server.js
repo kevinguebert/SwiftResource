@@ -63,7 +63,14 @@ app.post("/resources", function(req, res) {
         handleError(res, "Invalid user input", "Must provide a name, url, category, and summary", 400);
     } else {
         if (valid.isUri(req.body.url)) {
-            db.collection(RESOURCES_COLLECTION).insertOne(r, function(err, doc) {
+        	var resource = {
+        		is_swift: r.is_swift,
+        		name: req.body.name,
+        		url: req.body.url,
+        		summary: req.body.summary,
+        		category: req.body.category
+        	};
+            db.collection(RESOURCES_COLLECTION).insertOne(resource, function(err, doc) {
                 if (err) {
                     handleError(res, err.message, "Failed to create new resource.");
                 } else {
