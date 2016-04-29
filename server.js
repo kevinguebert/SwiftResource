@@ -9,8 +9,8 @@ var ObjectID = mongodb.ObjectID;
 var productHuntAPI = require('producthunt');
 
 var productHunt = new productHuntAPI({
-  client_id: "31e9bbb73d44db42834d4dc5d6c88f119da8ee6434eb66800ee3e3bef88070e7"// your client_id
-  client_secret: "4c2f2d3ce053e51b829882737f54207a6347206eb314702cf60bbb942f8e5ea1"// your client_secret
+  client_id: "31e9bbb73d44db42834d4dc5d6c88f119da8ee6434eb66800ee3e3bef88070e7",// your client_id
+  client_secret: "4c2f2d3ce053e51b829882737f54207a6347206eb314702cf60bbb942f8e5ea1", // your client_secret
   grant_type: 'client_credentials'
 });
 
