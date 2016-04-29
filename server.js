@@ -57,7 +57,7 @@ router.use(function(req, res, next) {
 });
 
 app.get("/producthunt", function(req, res) {
-	productHunt.collections.index({search:'56299'}, function (err, result) {
+	productHunt.collections.index({options{ id:'56299'}}, function (err, result) {
 		if(result.body != undefined) {
 			res.setHeader('Content-Type', 'application/json');
 			res.send(result.body);
