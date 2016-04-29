@@ -83,10 +83,7 @@ struct ResourceAPI {
                     finalResources.append(resource)
                 }
             }
-            print(finalResources.count)
-            print(resourcesArray.count)
             if finalResources.count == 0 && resourcesArray.count > 0 {
-                print("NO HERE")
                 return .Failure(APIError.InvalidJSONData)
             }
             return .Success(finalResources)

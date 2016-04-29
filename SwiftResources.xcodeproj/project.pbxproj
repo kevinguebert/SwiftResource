@@ -20,6 +20,7 @@
 		802BB3B01CD39AB30056D0EC /* ResourceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3AF1CD39AB30056D0EC /* ResourceStore.swift */; };
 		802BB3B21CD39DEA0056D0EC /* ResourceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802BB3B11CD39DEA0056D0EC /* ResourceDataSource.swift */; };
 		80566F611CD2557200DA015A /* ResourceCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80566F601CD2557200DA015A /* ResourceCollectionViewController.swift */; };
+		808601B91CD3B3420023F12C /* ResourceTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808601B81CD3B3420023F12C /* ResourceTableDataSource.swift */; };
 		80CEA9241CD23F2000C1E250 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */; };
 		C32A789175018FE1874E5DCE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2033275864FE1C500EA5BF /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		802BB3AF1CD39AB30056D0EC /* ResourceStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceStore.swift; sourceTree = "<group>"; };
 		802BB3B11CD39DEA0056D0EC /* ResourceDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceDataSource.swift; sourceTree = "<group>"; };
 		80566F601CD2557200DA015A /* ResourceCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceCollectionViewController.swift; sourceTree = "<group>"; };
+		808601B81CD3B3420023F12C /* ResourceTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableDataSource.swift; sourceTree = "<group>"; };
 		80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		FB2033275864FE1C500EA5BF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 				802BB3AD1CD3996E0056D0EC /* CoreDataStack.swift */,
 				802BB3AF1CD39AB30056D0EC /* ResourceStore.swift */,
 				802BB3B11CD39DEA0056D0EC /* ResourceDataSource.swift */,
+				808601B81CD3B3420023F12C /* ResourceTableDataSource.swift */,
 			);
 			path = SwiftResources;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				800A5D431CD27F7F00F680E1 /* ResourceImageViewCell.swift in Sources */,
 				802BB3A11CD395100056D0EC /* ResourceAPI.swift in Sources */,
 				802BB3B21CD39DEA0056D0EC /* ResourceDataSource.swift in Sources */,
+				808601B91CD3B3420023F12C /* ResourceTableDataSource.swift in Sources */,
 				800A5D3B1CD277D600F680E1 /* ResourcesTableViewController.swift in Sources */,
 				802BB3B01CD39AB30056D0EC /* ResourceStore.swift in Sources */,
 				802BB3AC1CD398EF0056D0EC /* Resource.swift in Sources */,
