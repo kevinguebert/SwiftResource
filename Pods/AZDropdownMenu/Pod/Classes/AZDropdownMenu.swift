@@ -265,20 +265,20 @@ public class AZDropdownMenu: UIView {
 
         view.addSubview(self)
 
-        animateOvelay(overlayAlpha, interval: 0.4, completionHandler: nil)
+//        animateOvelay(overlayAlpha, interval: 0.4, completionHandler: nil)
         menuView.reloadData()
-        UIView.animateWithDuration(
-            0.2,
-            delay:0,
-            usingSpringWithDamping: 0.9,
-            initialSpringVelocity: 0.6,
-            options:[],
-            animations: {
-                self.frame.origin.y = view.frame.origin.y
-                }, completion: { (finished : Bool) -> Void in
-                self.initialMenuCenter = self.menuView.center
-            }
-        )
+        self.initialMenuCenter = self.menuView.center
+        self.frame.origin.y = view.frame.origin.y
+//        UIView.animateWithDuration(
+//            0.2,
+//            delay:0,
+//            usingSpringWithDamping: 0.9,
+//            initialSpringVelocity: 0.6,
+//            options:[],
+//            animations: {
+//                }, completion: { (finished : Bool) -> Void in
+//            }
+//        )
     }
 
     public func showMenuFromRect(rect:CGRect) {
@@ -307,19 +307,19 @@ public class AZDropdownMenu: UIView {
 
     public func hideMenu() {
 
-        animateOvelay(0.0, interval: 0.1, completionHandler: nil)
-
-        UIView.animateWithDuration(
-            0.3, delay: 0.1,
-            options: [],
-            animations: {
-                self.frame.origin.y = -1200
-            },
-            completion: { (finished: Bool) -> Void in
-                self.menuView.center = self.initialMenuCenter
-                self.removeFromSuperview()
-            }
-        )
+        self.menuView.center = self.initialMenuCenter
+        self.removeFromSuperview()
+//        animateOvelay(0.0, interval: 0.1, completionHandler: nil)
+//
+//        UIView.animateWithDuration(
+//            0.3, delay: 0.1,
+//            options: [],
+//            animations: {
+//                self.frame.origin.y = -1200
+//            },
+//            completion: { (finished: Bool) -> Void in
+//            }
+//        )
     }
 }
 

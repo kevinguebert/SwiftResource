@@ -20,8 +20,8 @@ class ResourceImageViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     }
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 0 {
             // scrolling up

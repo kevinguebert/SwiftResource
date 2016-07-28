@@ -17,19 +17,41 @@ class CategoryResourceViewController: UITableViewController {
     var chosenCategory: String!
     
     var resourceItems = [FIRDataSnapshot]()
+    var allResourceData = [FIRDataSnapshot]()
     var rootRef = FIRDatabase.database().reference()
     
     let filterActions = ["One", "Two", "Three"]
-    var subCategories = [String]()
+    var subCategories = ["All"]
     var menu: AZDropdownMenu?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        menu = AZDropdownMenu(titles: filterActions)
         createUIElements()
-        menu!.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
+        menu = AZDropdownMenu(titles: subCategories)
+        registerTapHandler(menu!)
+    }
+    
+    func filterData(predicate: String) {
+        let filteredData = allResourceData.filter({
+            let data = $0.value! as AnyObject
+            if predicate == "All" {
+                return true
+            } else {
+                return data["sub_category"] as! String == predicate
+            }
+        })
+        resourceItems = filteredData
+        tableView.reloadData()
+        tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+        
+    }
+    
+    func registerTapHandler(menu: AZDropdownMenu) {
+        menu.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
             self!.hideNavigationBar()
-            self!.getFilteredResources()
+//            self!.getFilteredResources()
+            print(self!.subCategories[indexPath.row])
+            self!.filterData(self!.subCategories[indexPath.row])
         }
     }
     
@@ -66,13 +88,14 @@ class CategoryResourceViewController: UITableViewController {
     func showDropdown() {
         if (self.menu?.isDescendantOfView(self.view) == true) {
             hideNavigationBar()
-            self.menu?.hideMenu()
+            self.menu?.removeFromSuperview()
         } else {
             self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
             self.navigationController?.navigationBar.shadowImage = nil
             self.navigationController?.navigationBar.translucent = false
             self.navigationController?.navigationBar.tintColor = UIColor.blackColor()
             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.blackColor()
+            tableView.setContentOffset(CGPointZero, animated: true)
             self.menu?.showMenuFromView(self.view)
         }
     }
@@ -94,8 +117,17 @@ class CategoryResourceViewController: UITableViewController {
             conditionRef.observeEventType(.Value, withBlock: { snap in
                 for rest in snap.children.allObjects as! [FIRDataSnapshot] {
                     self.resourceItems.append(rest)
-//                    self.subCategories.append(rest.sub_category)
+                    self.allResourceData.append(rest)
+                    let data = rest.value
+                    for _ in self.subCategories {
+                        if !self.subCategories.contains(data?.valueForKey("sub_category") as! String) {
+                            self.subCategories.append(data?.valueForKey("sub_category") as! String)
+                        }
+                    }
                 }
+                print(self.subCategories)
+                self.menu = AZDropdownMenu(titles: self.subCategories)
+                self.registerTapHandler(self.menu!)
                 self.tableView.reloadData()
                 self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
             })
@@ -154,6 +186,8 @@ class CategoryResourceViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ResourceImageViewCell
                 cell.categoryLabel.text = chosenCategory
                 cell.categoryImage.layer.zPosition = -5;
+                cell.categoryImage.image = UIImage(named: chosenCategory)
+                
                 return cell
             case 1:
                 cellIdentifier = "resourceCell"
@@ -161,7 +195,6 @@ class CategoryResourceViewController: UITableViewController {
                 let data = resourceItems[indexPath.row].value
                 cell.resourcesTitle?.text = data?.valueForKey("name") as? String
                 cell.resourcesSummary?.text = data?.valueForKey("summary") as? String
-//                cell.resourcesSummary.sizeToFit()
                 return cell
             default: ()
                 cellIdentifier = "allResultsCell"
