@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '21951678496B16CAE3E770F1'
-               BlueprintName = 'FontAwesome.swift-FontAwesome.swift'
+               BlueprintIdentifier = '5AE4243699413B4E5EFA06AA'
+               BlueprintName = 'AZDropdownMenu'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'FontAwesome.swift.bundle'>
+               BuildableName = 'AZDropdownMenu.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

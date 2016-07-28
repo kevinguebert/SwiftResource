@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AZDropdownMenu-AZDropdownMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AZDropdownMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3F9858D62F6DD3F16B300BCADA073AFE</key>
+		<key>336B93337DFC5EE58B564606FF93F15D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D71132139A1E1855313CBD9F229AC7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -33,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>75E090A734A86BF9BAA26CD23F92EC82</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE8979CB0D4E0CF86960D26003677D48</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,4 +1,5 @@
 PODS:
+  - AZDropdownMenu (1.1.1)
   - Firebase (3.3.0):
     - Firebase/Core (= 3.3.0)
   - Firebase/Analytics (3.3.0):
@@ -24,11 +25,13 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
 
 DEPENDENCIES:
+  - AZDropdownMenu
   - Firebase
   - Firebase/Database
   - FontAwesome.swift
 
 SPEC CHECKSUMS:
+  AZDropdownMenu: 0ba09d5f7b1b8dc795824ec281c4dde8515f4498
   Firebase: 6250071f0e2440a5c4c67b8cb6b868f868237ac3
   FirebaseAnalytics: 0fd6532cb2c3d03cd5cf26ad295ccb091efd3104
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7

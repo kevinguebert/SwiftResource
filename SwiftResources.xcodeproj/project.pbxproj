@@ -13,6 +13,7 @@
 		80A967981D493BA100D75B2F /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A967971D493BA100D75B2F /* CategoryTableViewCell.swift */; };
 		80A9679A1D49486500D75B2F /* ResourceImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A967991D49486500D75B2F /* ResourceImageViewCell.swift */; };
 		80A9679C1D494B4F00D75B2F /* ResourcesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A9679B1D494B4F00D75B2F /* ResourcesTableViewCell.swift */; };
+		80A9679F1D4A4F2D00D75B2F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A9679E1D4A4F2D00D75B2F /* ModalViewController.swift */; };
 		80D70AFD1D48F7DA00ED9F03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D70AFC1D48F7DA00ED9F03 /* AppDelegate.swift */; };
 		80D70AFF1D48F7DA00ED9F03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D70AFE1D48F7DA00ED9F03 /* ViewController.swift */; };
 		80D70B021D48F7DA00ED9F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D70B001D48F7DA00ED9F03 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		80A967971D493BA100D75B2F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		80A967991D49486500D75B2F /* ResourceImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceImageViewCell.swift; sourceTree = "<group>"; };
 		80A9679B1D494B4F00D75B2F /* ResourcesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTableViewCell.swift; sourceTree = "<group>"; };
+		80A9679E1D4A4F2D00D75B2F /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		80D70AF91D48F7DA00ED9F03 /* SwiftResources.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftResources.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D70AFC1D48F7DA00ED9F03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D70AFE1D48F7DA00ED9F03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				80D70AFE1D48F7DA00ED9F03 /* ViewController.swift */,
 				80A967951D4925BD00D75B2F /* CategoryResourcesViewController.swift */,
+				80A9679E1D4A4F2D00D75B2F /* ModalViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -89,11 +92,9 @@
 		808674C11D49062C00E3D461 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80A9679D1D4A3B1E00D75B2F /* Cells */,
 				80D70B001D48F7DA00ED9F03 /* Main.storyboard */,
 				80D70B081D48F7DA00ED9F03 /* LaunchScreen.storyboard */,
-				80A967971D493BA100D75B2F /* CategoryTableViewCell.swift */,
-				80A967991D49486500D75B2F /* ResourceImageViewCell.swift */,
-				80A9679B1D494B4F00D75B2F /* ResourcesTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -113,6 +114,16 @@
 				80D70B111D48F7F100ED9F03 /* GoogleService-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		80A9679D1D4A3B1E00D75B2F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				80A967971D493BA100D75B2F /* CategoryTableViewCell.swift */,
+				80A967991D49486500D75B2F /* ResourceImageViewCell.swift */,
+				80A9679B1D494B4F00D75B2F /* ResourcesTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		80D70AF01D48F7DA00ED9F03 = {
@@ -269,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80A9679F1D4A4F2D00D75B2F /* ModalViewController.swift in Sources */,
 				80A967961D4925BD00D75B2F /* CategoryResourcesViewController.swift in Sources */,
 				80D70AFF1D48F7DA00ED9F03 /* ViewController.swift in Sources */,
 				80A9679A1D49486500D75B2F /* ResourceImageViewCell.swift in Sources */,

@@ -73,6 +73,10 @@ class LaunchViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        createUIElements()
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 //        let conditionRef = rootRef.child("resources").queryOrderedByChild("parent_category").queryEqualToValue("Libraries and Frameworks")
@@ -117,6 +121,7 @@ class LaunchViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         if segue.identifier == "categoryResources" {
             let destinationViewController = segue.destinationViewController as! CategoryResourceViewController

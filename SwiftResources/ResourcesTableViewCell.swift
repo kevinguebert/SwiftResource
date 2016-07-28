@@ -14,9 +14,10 @@ class ResourcesTableViewCell: UITableViewCell {
     @IBOutlet var cardView: UIView!
     
     override func layoutSubviews() {
-        self.cardView.layer.masksToBounds = false
+        self.cardView.layer.masksToBounds = true
         self.cardView.layer.cornerRadius = 1
-        resourcesSummary.sizeToFit()
+//        resourcesSummary.adjustsFontSizeToFitWidth = true
+//        resourcesSummary.sizeToFit()
     }
     
 }

@@ -15,13 +15,22 @@ class ResourceImageViewCell: UITableViewCell {
     @IBOutlet weak var topSpaceConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet var categoryImage: UIImageView!
+    @IBOutlet var categoryLabel: UILabel!
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+    }
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        print("HERE")
-        if scrollView.contentOffset.y >= 0 {
+        if scrollView.contentOffset.y > 0 {
             // scrolling up
             containerView.clipsToBounds = true
             bottomSpaceConstraint?.constant = -scrollView.contentOffset.y / 2
             topSpaceConstraint?.constant = scrollView.contentOffset.y / 2
+        } else if scrollView.contentOffset.y == 0 {
+            topSpaceConstraint?.constant = -64.0
+            containerView.clipsToBounds = false
         } else {
             // scrolling down
             topSpaceConstraint?.constant = scrollView.contentOffset.y
