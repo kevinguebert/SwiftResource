@@ -1,3 +1,3 @@
 # SwiftResource
-Turning Swift Resources into a mobile app
+TTurning Swift Resources into a mobile app
 Testing
