@@ -115,6 +115,7 @@ class CategoryResourceViewController: UITableViewController {
         if resourceItems.count == 0 {
             let conditionRef = rootRef.child("resources").queryOrderedByChild("parent_category").queryEqualToValue(chosenCategory)
             conditionRef.observeEventType(.Value, withBlock: { snap in
+                print(snap)
                 for rest in snap.children.allObjects as! [FIRDataSnapshot] {
                     self.resourceItems.append(rest)
                     self.allResourceData.append(rest)
