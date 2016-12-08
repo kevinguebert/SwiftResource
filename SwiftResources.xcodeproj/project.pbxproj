@@ -178,6 +178,7 @@
 				TargetAttributes = {
 					80018B201CCFFC3E00EBA8EF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = E4KM8ULW87;
 					};
 				};
 			};
@@ -395,6 +396,7 @@
 			baseConfigurationReference = 296B186E0556969B7B29B9A0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E4KM8ULW87;
 				INFOPLIST_FILE = SwiftResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinguebert.SwiftResources;
@@ -407,6 +409,7 @@
 			baseConfigurationReference = 28299194D65CEC4F419C300E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E4KM8ULW87;
 				INFOPLIST_FILE = SwiftResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinguebert.SwiftResources;
