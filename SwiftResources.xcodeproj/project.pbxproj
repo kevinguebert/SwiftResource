@@ -104,10 +104,10 @@
 		80018B231CCFFC3E00EBA8EF /* SwiftResources */ = {
 			isa = PBXGroup;
 			children = (
-				802BB3A01CD395100056D0EC /* ResourceAPI.swift */,
+				80D70B141D48FD6B00ED9F03 /* API */,
+				80D70B131D48FD5600ED9F03 /* Category */,
 				80018B241CCFFC3E00EBA8EF /* AppDelegate.swift */,
 				80018B281CCFFC3E00EBA8EF /* Main.storyboard */,
-				80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */,
 				80566F601CD2557200DA015A /* ResourceCollectionViewController.swift */,
 				800A5D3A1CD277D600F680E1 /* ResourcesTableViewController.swift */,
 				800A5D3C1CD2780400F680E1 /* ResourcesTableViewCell.swift */,
@@ -125,6 +125,22 @@
 				809742FF1CD3F91700E366B8 /* ResourcesViewController.swift */,
 			);
 			path = SwiftResources;
+			sourceTree = "<group>";
+		};
+		80D70B131D48FD5600ED9F03 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				80CEA9231CD23F2000C1E250 /* CategoryTableViewController.swift */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		80D70B141D48FD6B00ED9F03 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				802BB3A01CD395100056D0EC /* ResourceAPI.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +178,7 @@
 				TargetAttributes = {
 					80018B201CCFFC3E00EBA8EF = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = E4KM8ULW87;
 					};
 				};
 			};
@@ -379,6 +396,7 @@
 			baseConfigurationReference = 296B186E0556969B7B29B9A0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E4KM8ULW87;
 				INFOPLIST_FILE = SwiftResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinguebert.SwiftResources;
@@ -391,6 +409,7 @@
 			baseConfigurationReference = 28299194D65CEC4F419C300E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E4KM8ULW87;
 				INFOPLIST_FILE = SwiftResources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinguebert.SwiftResources;
