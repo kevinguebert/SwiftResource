@@ -36,7 +36,7 @@ struct ResourceAPI {
     private static let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        return formatter
+            return formatter
     }()
     
     private static func resourceURL(method method: Method, parameters: [String:String]?) -> NSURL {

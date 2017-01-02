@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A9s-T8-Q83">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A9s-T8-Q83">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -457,7 +457,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resourceImageCell" rowHeight="300" id="9Lh-2o-28M" customClass="ResourceImageViewCell" customModule="SwiftResources" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="300"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Lh-2o-28M" id="oSr-X6-LyV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
@@ -511,7 +511,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="resourceTableCell" focusStyle="custom" rowHeight="150" id="Waf-Pa-Gy4" customClass="ResourcesTableViewCell" customModule="SwiftResources" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="392" width="600" height="150"/>
+                                        <rect key="frame" x="0.0" y="328" width="600" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Waf-Pa-Gy4" id="o97-r2-ZWW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
@@ -560,7 +560,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="allResultsCell" focusStyle="custom" id="h3T-hR-a2M">
-                                        <rect key="frame" x="0.0" y="542" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="478" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h3T-hR-a2M" id="rVQ-Qk-Ett">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
