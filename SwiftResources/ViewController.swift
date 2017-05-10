@@ -30,15 +30,15 @@ class LaunchViewController: UITableViewController {
         
         return normalisedHeights
     }
-    let indicator:UIActivityIndicatorView = UIActivityIndicatorView  (activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    let indicator:UIActivityIndicatorView = UIActivityIndicatorView  (activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        indicator.color = UIColor.whiteColor()
-        indicator.frame = CGRectMake(0, 0, 40, 40)
+        indicator.color = UIColor.white
+        indicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         indicator.center = self.view.center
         self.view.addSubview(indicator)
-        indicator.bringSubviewToFront(self.view)
+        indicator.bringSubview(toFront: self.view)
         indicator.startAnimating()
         createUIElements()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,12 +46,12 @@ class LaunchViewController: UITableViewController {
             loadFirebaseCategories()
         }
         
-        tableView.backgroundColor = UIColor.darkGrayColor()
-        tableView.backgroundView?.backgroundColor = UIColor.darkGrayColor()
-        tableView.scrollEnabled = false
+        tableView.backgroundColor = UIColor.darkGray
+        tableView.backgroundView?.backgroundColor = UIColor.darkGray
+        tableView.isScrollEnabled = false
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let height: CGFloat
         
         if let normalisedHeight = self.normalisedCellHeights?[indexPath.row] {
@@ -65,26 +65,26 @@ class LaunchViewController: UITableViewController {
     }
     
     func createUIElements() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.isTranslucent = true
         self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         createUIElements()
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 //        let conditionRef = rootRef.child("resources").queryOrderedByChild("parent_category").queryEqualToValue("Libraries and Frameworks")
     }
     
     func loadFirebaseCategories() {
         let conditionRef = rootRef.child("parent_category")
-        conditionRef.observeSingleEventOfType(.Value, withBlock: { snap in
+        conditionRef.observeSingleEvent(of: .value, with: { snap in
             for rest in snap.children.allObjects as! [FIRDataSnapshot] {
                 self.resourceItems.append(rest)
             }
@@ -99,19 +99,19 @@ class LaunchViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resourceItems.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: CategoryTableViewCell  = tableView.dequeueReusableCellWithIdentifier("Cell") as! CategoryTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CategoryTableViewCell  = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CategoryTableViewCell
         cell.categoryLabel.text = resourceItems[indexPath.row].value as? String
-        cell.categoryLabel.textColor = UIColor.whiteColor()
+        cell.categoryLabel.textColor = UIColor.white
         cell.categoryLabel.font = UIFont(name: (cell.categoryLabel?.font?.fontName)!, size: 24)
         cell.backgroundImage.image = UIImage(named: (resourceItems[indexPath.row].value as? String)!)
         cell.backgroundImage.layer.zPosition = -5;
         
-        let overlay: UIView = UIView(frame: CGRectMake(0, 0, cell.frame.size.width, cellHeight))
+        let overlay: UIView = UIView(frame: CGRect(x: 0, y: 0, width: cell.frame.size.width, height: cellHeight))
         overlay.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.4)
         cell.backgroundImage.addSubview(overlay)
 
@@ -119,12 +119,12 @@ class LaunchViewController: UITableViewController {
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         if segue.identifier == "categoryResources" {
-            let destinationViewController = segue.destinationViewController as! CategoryResourceViewController
+            let destinationViewController = segue.destination as! CategoryResourceViewController
             let cell = sender as! CategoryTableViewCell
             destinationViewController.chosenCategory = cell.categoryLabel.text
         }

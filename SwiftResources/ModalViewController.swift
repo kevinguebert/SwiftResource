@@ -14,7 +14,7 @@ class ModalViewController: UIViewController {
     override func viewDidLoad() {
 //        view.backgroundColor = UIColor.clearColor()
         view.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        modalContainer?.backgroundColor = UIColor.redColor()
+        modalContainer?.backgroundColor = UIColor.red
         print("HERE")
 //        view.opaque = false
     }

@@ -10,29 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftResources/CategoryResourcesViewController.swift"
-            timestampString = "491423720.906884"
+            timestampString = "500932919.822147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "createUIElements()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftResources/CategoryResourcesViewController.swift"
-            timestampString = "491423720.906884"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "showDropdown()"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -49,54 +33,6 @@
             endingLineNumber = "270"
             landmarkName = "showMenuFromView(_:height:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftResources/CategoryResourcesViewController.swift"
-            timestampString = "491425158.286484"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftResources.CategoryResourceViewController.viewDidAppear (Swift.Bool) -&gt; ()"
-                  moduleName = "SwiftResources"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kguebe/Documents/Development/SwiftResources/SwiftResources/CategoryResourcesViewController.swift"
-                  timestampString = "491425158.514496"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "1175">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftResources.CategoryResourceViewController.(viewDidAppear (Swift.Bool) -&gt; ()).(closure #1)"
-                  moduleName = "SwiftResources"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kguebe/Documents/Development/SwiftResources/SwiftResources/CategoryResourcesViewController.swift"
-                  timestampString = "491425158.51464"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

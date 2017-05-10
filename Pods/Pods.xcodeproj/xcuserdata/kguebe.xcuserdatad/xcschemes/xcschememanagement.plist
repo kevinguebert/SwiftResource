@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AZDropdownMenu-AZDropdownMenu.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>AZDropdownMenu.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,7 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-SwiftResources.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>336B93337DFC5EE58B564606FF93F15D</key>
+		<key>1FE2578FF0805299395CF2A0206BB671</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D71132139A1E1855313CBD9F229AC7A</key>
+		<key>7A5C6178FD2E71F114D29797DC08DDDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>695CC72855D1B916841CC019B2E2DB65</key>
+		<key>92BB131FA876445E027D20AE23EA7B5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>75E090A734A86BF9BAA26CD23F92EC82</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE8979CB0D4E0CF86960D26003677D48</key>
+		<key>EF4F067C2D0E135B80299B089E168BDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

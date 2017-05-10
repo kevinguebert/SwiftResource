@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 import FontAwesome_swift
-import AZDropdownMenu
 
 class CategoryResourceViewController: UITableViewController {
     
@@ -22,16 +21,13 @@ class CategoryResourceViewController: UITableViewController {
     
     let filterActions = ["One", "Two", "Three"]
     var subCategories = ["All"]
-    var menu: AZDropdownMenu?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         createUIElements()
-        menu = AZDropdownMenu(titles: subCategories)
-        registerTapHandler(menu!)
     }
     
-    func filterData(predicate: String) {
+    func filterData(_ predicate: String) {
         let filteredData = allResourceData.filter({
             let data = $0.value! as AnyObject
             if predicate == "All" {
@@ -42,22 +38,13 @@ class CategoryResourceViewController: UITableViewController {
         })
         resourceItems = filteredData
         tableView.reloadData()
-        tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+        tableView.reloadSections(IndexSet(integer: 1), with: UITableViewRowAnimation.automatic)
         
     }
     
-    func registerTapHandler(menu: AZDropdownMenu) {
-        menu.cellTapHandler = { [weak self] (indexPath: NSIndexPath) -> Void in
-            self!.hideNavigationBar()
-//            self!.getFilteredResources()
-            print(self!.subCategories[indexPath.row])
-            self!.filterData(self!.subCategories[indexPath.row])
-        }
-    }
-    
     func getFilteredResources() {
-        let conditionRef = rootRef.child("resources").queryOrderedByChild("sub_category")
-        conditionRef.observeEventType(.Value, withBlock: { snap in
+        let conditionRef = rootRef.child("resources").queryOrdered(byChild: "sub_category")
+        conditionRef.observe(.value, with: { snap in
             for rest in snap.children.allObjects as! [FIRDataSnapshot] {
                 print(rest)
             }
@@ -65,81 +52,61 @@ class CategoryResourceViewController: UITableViewController {
         
     }
     func hideNavigationBar() {
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     func createUIElements() {
         let rightButton: UIBarButtonItem = UIBarButtonItem()
-        let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(20)] as Dictionary!
-        rightButton.setTitleTextAttributes(attributes, forState: .Normal)
-        rightButton.title = String.fontAwesomeIconWithName(.Filter)
-        rightButton.action = #selector(CategoryResourceViewController.showDropdown)
-        rightButton.target = self
+        let attributes = [NSFontAttributeName: UIFont.fontAwesome(ofSize: 20)] as Dictionary!
+        rightButton.setTitleTextAttributes(attributes, for: .normal)
+        rightButton.title = String.fontAwesomeIcon(name: .filter)
         self.navigationItem.rightBarButtonItem = rightButton
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
-    
-    func showDropdown() {
-        if (self.menu?.isDescendantOfView(self.view) == true) {
-            hideNavigationBar()
-            self.menu?.removeFromSuperview()
-        } else {
-            self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
-            self.navigationController?.navigationBar.shadowImage = nil
-            self.navigationController?.navigationBar.translucent = false
-            self.navigationController?.navigationBar.tintColor = UIColor.blackColor()
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.blackColor()
-            tableView.setContentOffset(CGPointZero, animated: true)
-            self.menu?.showMenuFromView(self.view)
-        }
-    }
-    
     
     func showModal() {
         let modalViewController = ModalViewController()
-        modalViewController.modalPresentationStyle = .OverCurrentContext
+        modalViewController.modalPresentationStyle = .overCurrentContext
         modalViewController.modalText?.text = "WOAH"
-        modalViewController.modalContainer?.backgroundColor = UIColor.redColor()
-        presentViewController(modalViewController, animated: true, completion: nil)
+        modalViewController.modalContainer?.backgroundColor = UIColor.red
+        present(modalViewController, animated: true, completion: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("The chosen category is \(chosenCategory)")
         if resourceItems.count == 0 {
-            let conditionRef = rootRef.child("resources").queryOrderedByChild("parent_category").queryEqualToValue(chosenCategory)
-            conditionRef.observeEventType(.Value, withBlock: { snap in
+            let conditionRef = rootRef.child("resources").queryOrdered(byChild: "parent_category").queryEqual(toValue: chosenCategory)
+            conditionRef.observe(.value, with: { snap in
                 print(snap)
                 for rest in snap.children.allObjects as! [FIRDataSnapshot] {
                     self.resourceItems.append(rest)
                     self.allResourceData.append(rest)
                     let data = rest.value
                     for _ in self.subCategories {
-                        if !self.subCategories.contains(data?.valueForKey("sub_category") as! String) {
-                            self.subCategories.append(data?.valueForKey("sub_category") as! String)
+                        if !self.subCategories.contains((data as AnyObject).value(forKey: "sub_category") as! String) {
+                            self.subCategories.append((data as AnyObject).value(forKey: "sub_category") as! String)
                         }
                     }
                 }
                 print(self.subCategories)
-                self.menu = AZDropdownMenu(titles: self.subCategories)
-                self.registerTapHandler(self.menu!)
                 self.tableView.reloadData()
-                self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.tableView.reloadSections(IndexSet(integer: 1), with: UITableViewRowAnimation.automatic)
             })
         }
     }
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
             case 0:
                 return 1
@@ -153,7 +120,7 @@ class CategoryResourceViewController: UITableViewController {
     }
     
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
             case 0:
                 return UITableViewAutomaticDimension
@@ -164,7 +131,7 @@ class CategoryResourceViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
             case 0:
                 return 200
@@ -175,16 +142,16 @@ class CategoryResourceViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        showModal()
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellIdentifier = ""
         switch indexPath.section {
             case 0:
                 cellIdentifier = "resourceImageCell"
-                let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ResourceImageViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ResourceImageViewCell
                 cell.categoryLabel.text = chosenCategory
                 cell.categoryImage.layer.zPosition = -5;
                 cell.categoryImage.image = UIImage(named: chosenCategory)
@@ -192,28 +159,28 @@ class CategoryResourceViewController: UITableViewController {
                 return cell
             case 1:
                 cellIdentifier = "resourceCell"
-                let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ResourcesTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ResourcesTableViewCell
                 let data = resourceItems[indexPath.row].value
-                cell.resourcesTitle?.text = data?.valueForKey("name") as? String
-                cell.resourcesSummary?.text = data?.valueForKey("summary") as? String
+                cell.resourcesTitle?.text = (data as AnyObject).value(forKey: "name") as? String
+                cell.resourcesSummary?.text = (data as AnyObject).value(forKey: "summary") as? String
                 return cell
             default: ()
                 cellIdentifier = "allResultsCell"
-                let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
                 return cell
         }
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        if let imageCell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? ResourceImageViewCell {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let imageCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ResourceImageViewCell {
             imageCell.scrollViewDidScroll(scrollView)
         }
         if scrollView.contentOffset.y >= 0 {
-            self.navigationController?.navigationBar.tintColor = UIColor.blackColor()
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.blackColor()
+            self.navigationController?.navigationBar.tintColor = UIColor.black
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
         } else {
-            self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         }
     }
 }

@@ -22,7 +22,7 @@ class ResourceImageViewCell: UITableViewCell {
         super.layoutSubviews()
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > 0 {
             // scrolling up
             containerView.clipsToBounds = true
